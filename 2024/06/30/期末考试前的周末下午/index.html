@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sweet time">
-    <meta name="description" content="Sweet time">
+    <meta name="keywords" content="期末考试前的周末下午, Sweet time">
+    <meta name="description" content="不得不说有点紧张">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,53 +17,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Sweet time</title>
+    <title>期末考试前的周末下午 | Sweet time</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -82,6 +41,8 @@
     <link rel="stylesheet" href="/css/post.css">
 
 
+
+    
 
 
 
@@ -260,433 +221,284 @@
     
 
 
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
 
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Sweet time between Jessie and Peler
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "There is no difference between a wise man and a fool when they fall in love.",
-                            
-                                "The heart wants what it wants. Unconditional Love.",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/PelerYuan/sweet-time-with-Jessie" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/PelerYuan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:peler_little_pig@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-    <a href="https://twitter.com/pelerlittlepig" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/pelerlittlepig" data-position="top" data-delay="50">
-        <i class="fab fa-twitter"></i>
-    </a>
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2975972646" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2975972646" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
-    </div>
-
-    
-</div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;Jessie的名言
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            对于一个伟大的头脑而言，死亡不是终点。终点是停止思考的瞬间。
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i3.mjj.rip/2024/06/30/852fad7bd509a7d6632316724aa66bc6.jpeg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">期末考试前的周末下午</h1>
                 </div>
             </div>
         </div>
     </div>
-    
+</div>
+
+
+
+
+<main class="container content">
 
     
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
 
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-30
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>之前，Jessie 和 Peler 决定把电脑系统换成 Linux。于是 Jessie 在周五的时候把电脑偷偷给了 Peler。</p>
+<p>Peler 最终成功配置好了 Kali Linux：<br><img src="https://i3.mjj.rip/2024/06/30/b45f49057a03caa33cf47aae6d6e425a.jpeg" style="zoom:67%;"></p>
+<p>周六的时候 Jessie 建议 Peler 周日早点到南京把电脑给她，然而在出发前 Peler 却出现意外了，所幸还是成功解决了：</p>
+<img src="https://i3.mjj.rip/2024/06/30/a73c1dff0504e2643a3281e6d5c8a72e.jpeg" style="zoom:67%;">
+
+<p>到南京之后，Peler 和 Jessie 在一家……喝东西的店里（找不到一个合适的名词）复习了一会，然后 Jessie 尝试了一下新的电脑系统，开始玩植物大战僵尸。Peler 靠着 Jessie 的肩膀睡着了（好舒服）。</p>
+<p>到了 5 点多，Peler 和 Jessie 决定出去走走，不继续坐着了。但是去哪呢？那就到乒乓球馆吧！于是 Peler 和 Jessie 激战了将近一个半小时的乒乓球（过瘾）。</p>
+<p>哦，对了。Peler 中间还拍了两张照片发给他初中的地理老师，完成了之前返校时她布置给 Peler 的任务。</p>
+<p><img src="https://i3.mjj.rip/2024/06/30/ea8e3c0a83b6d8b1705e1b5d54552e61.jpeg"></p>
+
+                
+            </div>
+            <hr/>
+
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/06/30/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%89%8D%E7%9A%84%E5%91%A8%E6%9C%AB%E4%B8%8B%E5%8D%88/">
-                        <div class="card-image">
-                            
-                            <img src="https://i3.mjj.rip/2024/06/30/852fad7bd509a7d6632316724aa66bc6.jpeg" class="responsive-img" alt="期末考试前的周末下午">
-                            
-                            <span class="card-title">期末考试前的周末下午</span>
-                        </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                不得不说有点紧张
-                            
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Peler</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2024/06/30/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%89%8D%E7%9A%84%E5%91%A8%E6%9C%AB%E4%B8%8B%E5%8D%88/">http://example.com/2024/06/30/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%89%8D%E7%9A%84%E5%91%A8%E6%9C%AB%E4%B8%8B%E5%8D%88/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Peler</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
                         </div>
-                        <div class="publish-info">
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/06/30/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%89%8D%E7%9A%84%E5%91%A8%E6%9C%AB%E4%B8%8B%E5%8D%88/">
+                    <div class="card-image">
+                        
+                        <img src="https://i3.mjj.rip/2024/06/30/852fad7bd509a7d6632316724aa66bc6.jpeg" class="responsive-img" alt="期末考试前的周末下午">
+                        
+                        <span class="card-title">期末考试前的周末下午</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            不得不说有点紧张
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-06-30
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Peler
+                            
+                        </span>
                     </div>
-
-                    
                 </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/05/19/520%E7%9A%84%E5%89%8D%E4%B8%80%E5%A4%A9/">
-                        <div class="card-image">
-                            
-                            <img src="https://i3.mjj.rip/2024/06/30/da7f69ff8b45b675d12a330977431a61.jpeg" class="responsive-img" alt="520的前一天">
-                            
-                            <span class="card-title">520的前一天</span>
-                        </div>
-                    </a>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                不得不说有点紧张
-                            
-                        </div>
-                        <div class="publish-info">
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/05/19/520%E7%9A%84%E5%89%8D%E4%B8%80%E5%A4%A9/">
+                    <div class="card-image">
+                        
+                        <img src="https://i3.mjj.rip/2024/06/30/da7f69ff8b45b675d12a330977431a61.jpeg" class="responsive-img" alt="520的前一天">
+                        
+                        <span class="card-title">520的前一天</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            不得不说有点紧张
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-05-19
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Peler
+                            
+                        </span>
                     </div>
-
-                    
                 </div>
+                
             </div>
-              <!-- 隐藏某个文章 -->
-            
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/04/27/%E7%84%A6%E5%B1%B1%EF%BC%81/">
-                        <div class="card-image">
-                            
-                            <img src="https://i.mji.rip/2024/05/01/467d865fc93982eb8e8195d7ea28dca2.jpeg" class="responsive-img" alt="焦山！">
-                            
-                            <span class="card-title">焦山！</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                成功解锁玩yuan神的另一种含义
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-27
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/04/14/%E5%88%9D%E5%90%BB/">
-                        <div class="card-image">
-                            
-                            <img src="https://ice.frostsky.com/2024/04/20/306845bfb3ff698d7bd9287389c293fa.jpeg" class="responsive-img" alt="初吻">
-                            
-                            <span class="card-title">初吻</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                好奇妙的感觉
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/04/03/%E6%B8%85%E6%98%8E%E8%8A%82%E6%94%BE%E5%81%87%E7%9A%84%E4%B8%8B%E5%8D%88/">
-                        <div class="card-image">
-                            
-                            <img src="https://ice.frostsky.com/2024/04/20/088ddf74667289b65b504a5d4ba121c0.jpeg" class="responsive-img" alt="清明节放假的下午">
-                            
-                            <span class="card-title">清明节放假的下午</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Peler 第一次去 Jessie 家
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/03/30/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%80%E5%9D%97%E5%87%BA%E5%8E%BB%E7%8E%A9/">
-                        <div class="card-image">
-                            
-                            <img src="https://ice.frostsky.com/2024/04/20/8dc2bb8c448218a0840aa4f8dd6a0d1d.jpeg" class="responsive-img" alt="第一次一块出去玩">
-                            
-                            <span class="card-title">第一次一块出去玩</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                故事开始的地方
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Peler
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
         </div>
-    </article>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    
 
 </main>
 
